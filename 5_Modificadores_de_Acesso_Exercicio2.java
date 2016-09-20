@@ -16,7 +16,7 @@ class Empresa {
 		for(int i = 0; i < this.empregados.length; i++) {
 			if(empregados[i] != null) {
 				System.out.println("Funcionario na posição: " + i);
-				System.out.println("R$" + this.empregados[i].getSalario());
+				System.out.println("R$" + this.empregados[i].salario);
 			}
 		}
 	}
@@ -31,7 +31,7 @@ class Empresa {
 
 	boolean contem(Funcionario f) {
 		for(int i = 0; i < this.empregados.length; i++) {
-			if(empregados[i] != null && empregados[i].getNome().equals(f.getNome())) {
+			if(empregados[i] != null && empregados[i].nome.equals(f.nome)) {
 				return true;
 			}
 		}
@@ -46,30 +46,30 @@ class TestaEmpresa {
 		empresa.empregados = new Funcionario[10];
 
 		Funcionario f1 = new Funcionario();
-		f1.setNome("Maria");
-        f1.setSalario(1000.0);
-        f1.setDataEntradaBanco(new Data());
-        f1.getDepartamento().nome = "Departamento 1";
+		f1.nome = "Maria";
+        f1.salario = 1000d;
+        f1.dataEntradaBanco = new Data();
+        f1.departamento.nome = "Departamento 1";
         empresa.adiciona(f1);
 
         Funcionario f2 = new Funcionario();
-        f2.setNome("José");
-        f2.setSalario(1700.0);
-        f2.setDataEntradaBanco(new Data());
-        f2.getDepartamento().nome = "Departamento 2";
+        f2.nome = "José";
+        f2.salario = 1700d;
+        f2.dataEntradaBanco = new Data();
+        f2.departamento.nome = "Departamento 2";
         empresa.adiciona(f2);
 
         Funcionario f3 = new Funcionario();
-        f3.setNome("Marcos");
-        f3.setSalario(1700.0);
-        f3.setDataEntradaBanco(new Data());
-        f3.getDepartamento().nome = "Departamento 2";
+        f3.nome = "Marcos";
+        f3.salario = 1700d;
+        f3.dataEntradaBanco = new Data();
+        f3.departamento.nome = "Departamento 2";
         
         empresa.mostraTodasAsInformacoes();
 
-        System.out.println("Empresa contem o funcionario " + f1.getNome() + ": " + empresa.contem(f1));
-        System.out.println("Empresa contem o funcionario " + f2.getNome() + ": " + empresa.contem(f2));
-        System.out.println("Empresa contem o funcionario " + f3.getNome() + ": " + empresa.contem(f3));
+        System.out.println("Empresa contem o funcionario " + f1.nome + ": " + empresa.contem(f1));
+        System.out.println("Empresa contem o funcionario " + f2.nome + ": " + empresa.contem(f2));
+        System.out.println("Empresa contem o funcionario " + f3.nome + ": " + empresa.contem(f3));
 	}
 }
 
@@ -176,13 +176,13 @@ class Programa {
 		departamento.nome = "Corregedoria";
 
 		Funcionario funcionario = new Funcionario();
-		funcionario.setNome("Carlos");
-		funcionario.setDepartamento(departamento);
-		funcionario.setSalario(222.0);
-		funcionario.setRg("12345678");
-		funcionario.setDataEntradaBanco(dataEntrada);
+		funcionario.nome = "Carlos";
+		funcionario.departamento = departamento;
+		funcionario.salario = 222.0;
+		funcionario.rg = "12345678";
+		funcionario.dataEntradaBanco = dataEntrada;
 
-		System.out.println(funcionario.getDataEntradaBanco().getFormatada());
+		System.out.println(funcionario.dataEntradaBanco.getFormatada());
 
 	}
 }
